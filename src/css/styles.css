@@ -1,0 +1,112 @@
+
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color:black;
+}
+main:after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,
+        rgba(0,0,0,1) 10%,
+        rgba(0,0,0,0.06) 50%,
+        rgba(0,0,0,1) 90%);
+    z-index: -1;
+}
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+.carrossel .imagem.ativa{
+    display: block;
+}
+@keyframes mudarImagem{
+    from{
+        opacity: 0.85;
+    }
+        to{
+        opacity: 1;
+    }    
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+    justify-content: space-evenly;
+}
+
+.informacoes .logo{    
+    filter: invert(1);
+    max-width: 350px;
+    margin-bottom: 80px;
+}
+.informacoes .descricao{
+    width: 55%;
+    font-size: 24px;
+    line-height: 30px;
+}
+.botoes-carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.botoes-carrossel .botao{
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-color: #ffffff;
+    cursor: pointer;
+}
+.botoes-carrossel .botao:hover{    
+    transform: scale(1.5);
+    /* transition: 0.3s ease-in-out; */
+}
+.botoes-carrossel .botao.selecionado{
+    background-color: #1d8346;
+}
+
+.conteudo .direitos{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.menu-lateral{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+.menu-lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.menu-lateral .icone{
+    width: 40px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+}
+.menu-lateral .icone:hover{
+    transform: scale(1.2);
+}
